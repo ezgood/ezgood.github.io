@@ -16,7 +16,10 @@
 			var codeArr = myDcode.split(":")
 			if((codeArr[1] == '1922') && ( (codeArr[0] == 'SMSTO') || (codeArr[0] == 'smsto') )){
 			  window.location.href = "1922.html?qr="+encodeURIComponent(codeArr[2]);
-		    }
+		        } else {
+			  alert("非1922實聯制QRCode");
+			  location.reload();
+			}
 		};
 		const config = { fps: 10, qrbox: 250 };
 		html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
